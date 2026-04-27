@@ -1,0 +1,17 @@
+# Simple Email Phishing Detector
+
+def check_email(message):
+    suspicious_keywords = ["urgent", "click here", "win", "password", "lottery", "free", "account"]
+    found = []
+
+    for word in suspicious_keywords:
+        if word.lower() in message.lower():
+            found.append(word)
+
+    if found:
+        print("⚠️ Warning: Suspicious keywords found:", ", ".join(found))
+    else:
+        print("✅ No suspicious keywords detected.")
+
+email_text = input("Enter the email message to check: ")
+check_email(email_text)
