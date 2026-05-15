@@ -1,0 +1,21 @@
+# Simple Calculator with History
+
+history = []
+
+def calculate():
+    while True:
+        expr = input("Enter expression (or 'quit'): ")
+        if expr.lower() == "quit":
+            break
+        try:
+            result = eval(expr)
+            history.append(f"{expr} = {result}")
+            print("Result:", result)
+        except:
+            print("Invalid expression.")
+
+    print("\n--- Calculation History ---")
+    for item in history:
+        print(item)
+
+calculate()
