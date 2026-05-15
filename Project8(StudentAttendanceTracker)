@@ -1,1 +1,26 @@
+# Student Attendance Tracker
+
+attendance = {}
+
+def mark_attendance(name):
+    attendance[name] = "Present"
+    print(f"{name} marked present.")
+
+def view_attendance():
+    if not attendance:
+        print("No attendance records yet.")
+    else:
+        print("\n--- Attendance ---")
+        for student, status in attendance.items():
+            print(f"{student}: {status}")
+
+while True:
+    print("\n1. Mark Attendance\n2. View Attendance\n3. Exit")
+    choice = input("Choose: ")
+    if choice == "1":
+        mark_attendance(input("Enter student name: "))
+    elif choice == "2":
+        view_attendance()
+    elif choice == "3":
+        break
 
