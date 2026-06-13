@@ -1,0 +1,15 @@
+class Library:
+    def __init__(self):
+        self.books = []
+
+    def add_book(self, title, author):
+        self.books.append({"title": title, "author": author})
+
+    def list_books(self):
+        for b in self.books:
+            print(f"{b['title']} by {b['author']}")
+
+lib = Library()
+lib.add_book("Python Basics", "John Doe")
+lib.add_book("Networking Concepts", "Jane Smith")
+lib.list_books()
